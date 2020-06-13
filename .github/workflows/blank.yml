@@ -24,7 +24,6 @@ jobs:
     uses: actions/setup-node@master
     with:
       node-version: "10.x"
-
       - name: Setup Dependencies
         run: |
           npm install hexo-cli -g
@@ -34,5 +33,3 @@ jobs:
         run: |
           tcb login --apiKeyId ${{apiKeyId}} --apiKey ${{apiKey}}
           tcp cloudbase hosting:deploy ./public  -e fzy123-14df6e
-
-  

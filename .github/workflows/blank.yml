@@ -33,8 +33,8 @@ jobs:
     
     - name: Deploy hexo
       env:
-        apiKeyId: ${{ apiKeyId }}
-        apiKey: ${{ apiKey }}
+        apiKeyId: ${{ APIKEYID }}
+        apiKey: ${{ APIKEY }}
       run: |
         tcb login --apiKeyId apiKeyId --apiKey apiKey
         tcp cloudbase hosting:deploy ./public  -e fzy123-14df6e

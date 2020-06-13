@@ -36,5 +36,5 @@ jobs:
         apiKeyId: ${{ secrets.APIKEYID }}
         apiKey: ${{ secrets.APIKEY }}
       run: |
-        tcb login --apiKeyId apiKeyId --apiKey apiKey
-        tcp cloudbase hosting:deploy ./public  -e fzy123-14df6e
+        cloudbase login --apiKeyId apiKeyId --apiKey apiKey
+        cloudbase cloudbase hosting:deploy ./public  -e fzy123-14df6e

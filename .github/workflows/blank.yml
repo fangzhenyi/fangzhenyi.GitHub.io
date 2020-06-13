@@ -20,19 +20,19 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    - name: Setup Node.js 10.x 
-     uses: actions/setup-node@master
-     with:
-       node-version: "10.x"
-  
-   - name: Setup Dependencies
-     run: |
-       npm install hexo-cli -g
-       npm install
-       npm i -g @cloudbase/cli
-   - name: Deploy hexo
-     run: |
-       tcb login --apiKeyId ${{apiKeyId}} --apiKey ${{apiKey}}
-       tcp cloudbase hosting:deploy ./public  -e fzy123-14df6e
+    - name: Setup Node.js 10.x
+    uses: actions/setup-node@master
+    with:
+      node-version: "10.x"
+
+      - name: Setup Dependencies
+        run: |
+          npm install hexo-cli -g
+          npm install
+          npm i -g @cloudbase/cli
+      - name: Deploy hexo
+        run: |
+          tcb login --apiKeyId ${{apiKeyId}} --apiKey ${{apiKey}}
+          tcp cloudbase hosting:deploy ./public  -e fzy123-14df6e
 
   

@@ -37,4 +37,4 @@ jobs:
         apiKey: ${{ secrets.APIKEY }}
       run: |
         cloudbase login --apiKeyId apiKeyId --apiKey apiKey
-        cloudbase cloudbase hosting:deploy ./public  -e fzy123-14df6e
+        cloudbase hosting:deploy ./public  -e fzy123-14df6e

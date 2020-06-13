@@ -24,11 +24,13 @@ jobs:
     uses: actions/setup-node@master
     with:
       node-version: "10.x"
+    
     - name: Setup Dependencies
         run: |
           npm install hexo-cli -g
           npm install
           npm i -g @cloudbase/cli
+    
     - name: Deploy hexo
         run: |
           tcb login --apiKeyId ${{apiKeyId}} --apiKey ${{apiKey}}

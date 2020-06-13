@@ -30,11 +30,13 @@ jobs:
         npm install hexo-cli -g
         npm install
         npm i -g @cloudbase/cli
-    
-    - name: Deploy hexo
-      env:
-        apiKeyId: ${{ secrets.APIKEYID }}
-        apiKey: ${{ secrets.APIKEY }}
-      run: |
-        cloudbase login --apiKeyId apiKeyId --apiKey apiKey
-        cloudbase hosting:deploy ./public  -e fzy123-14df6e
+        hexo generate
+
+    - name: Deploy static to Tencent CloudBase
+      id: deployStatic
+      uses: TencentCloudBase/cloudbase-action@v1.1.1
+      with:
+        secretId: ${{ secrets.APIKEYID }}
+        secretKey: ${{ secrets.APIKEY }}
+        envId: fzy123-14df6e
+        staticSrcPath: public

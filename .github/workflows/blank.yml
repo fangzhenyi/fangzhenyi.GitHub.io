@@ -32,6 +32,9 @@ jobs:
         npm i -g @cloudbase/cli
     
     - name: Deploy hexo
+      env:
+        apiKeyId: ${{ apiKeyId }}
+        apiKey: ${{ apiKey }}
       run: |
-        tcb login --apiKeyId ${{apiKeyId}} --apiKey ${{apiKey}}
+        tcb login --apiKeyId apiKeyId --apiKey apiKey
         tcp cloudbase hosting:deploy ./public  -e fzy123-14df6e

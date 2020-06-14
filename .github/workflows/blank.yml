@@ -27,9 +27,9 @@ jobs:
     
     - name: Setup Dependencies
       run: |
-        npm install hexo-cli -g
-        npm install
+        npm install -g hexo-cli
         npm i -g @cloudbase/cli
+        npm install
         hexo generate
 
     - name: Deploy static to Tencent CloudBase
